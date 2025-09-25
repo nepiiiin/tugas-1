@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="csskalku.css">
+</head>
+<body>
+    <fieldset> 
+        <legend>Kalkulator</legend>
+            <table>
+                <tr>
+                <td>Masukkan Bilangan 1:</td>
+                <td><input type="number" id="bil1" class="satu" placeholder="Masukkan Angka"></td>
+            </tr>
+            <tr>
+                <td>Masukkan Bilangan 2:</td>
+                <td><input type="number" id="bil2" class="satu" placeholder="Masukkan Angka"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="dua">
+                    <button type="button" onclick="proses('+')" name="submit" class="tiga">+</button>
+                    <button type="button" onclick="proses('-')" name="submit" class="tiga">-</button>
+                    <button type="button" onclick="proses('*')" name="submit" class="tiga">*</button>
+                    <button type="button" onclick="proses('/')" name="submit" class="tiga">/</button>
+                </td>
+            <tr>
+                <td>Output:</td>
+                <td><input type="number" name="output" id="output" class="satu"></td>
+            </tr>
+        </table>
+        <script>
+            function proses(operator) {
+                let bil1 = document.getElementById("bil1").value
+                bil1 = Number(bil1)
+                let bil2 = document.getElementById("bil2").value
+                bil2 = Number(bil2)
+                let hasil;
+                let output = document.getElementById("output")
+
+                switch (operator) {
+                    case "+":
+                        hasil = bil1 + bil2;
+                        break;
+                    case "-":
+                        hasil = bil1 - bil2;
+                        break;
+                    case "*":
+                        hasil = bil1 * bil2;
+                        break;
+                    case "/":
+                        hasil = bil1 / bil2;
+                        break;
+                }
+                  output.value = hasil
+
+            }
+        </script>
+    </fieldset>
+
+
+</body>
+</html>
